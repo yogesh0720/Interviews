@@ -4,13 +4,23 @@ interface Factory
     public function create();
 }
 
-class Friend implements Factory
+class Friend
 {
-    public function create()
+    public function sayHello()
     {
-        $friend = new Friend();
+        return "Hello, I am your friend!";
     }
 }
 
-$friend = new Friend();
-$friend->create();
+class FriendFactory implements Factory
+{
+    public function create(): Friend
+    {
+        return new Friend();
+    }
+}
+
+$factory = new FriendFactory();
+$friend = $factory->create();
+
+echo $friend->sayHello(); //Hello, I am your friend!

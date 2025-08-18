@@ -1,20 +1,22 @@
 <?php
-class SingleTon 
+class SingleTon
 {
-    private static $instance;
+    private static ?SingleTon $instance = null;
 
-    public static function getInstance(){
+    // Private constructor prevents direct instantiation
+    private function __construct() {}
 
-        if(!isset(self::$instance) && self::$instance == null){            
-            self::$instance = new static();
+    public static function getInstance(): SingleTon
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
         }
         return self::$instance;
     }
 }
 
-//$obj1 = (new SingleTon())->getInstance();
-//$obj2 = (new SingleTon())->getInstance();
-$obj1 = (new SingleTon())::getInstance();
-$obj2 = (new SingleTon())::getInstance();
+// Usage
+$obj1 = SingleTon::getInstance();
+$obj2 = SingleTon::getInstance();
 
-var_dump($obj1 == $obj2);
+var_dump($obj1 === $obj2); // true ✅

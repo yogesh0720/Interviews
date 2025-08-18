@@ -20,8 +20,8 @@ function findRoots($a, $b, $c)
     // }
     // return [$equation, $root];
     $delta = ($b * $b) - 4 * ($a * $c);
-    $x = (- $b - sqrt($delta)) / (2 * $a);
-    $y = (- $b + sqrt($delta)) / (2 * $a);
+    $x = (-$b - sqrt($delta)) / (2 * $a);
+    $y = (-$b + sqrt($delta)) / (2 * $a);
     return [$x, $y];
 }
 

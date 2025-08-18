@@ -1,22 +1,20 @@
 <?php
-//hiding the information with wrapping some data.
-// getter and setter example is Encapsulation
-
 class User
 {
-    private $username;
+    private string $username; // strict typing for better safety
 
-    function getUserName()
+    public function getUserName(): string
     {
         return $this->username;
     }
 
-    function setUserName($username)
+    public function setUserName(string $username): void
     {
         $this->username = $username;
     }
 }
-$username = new User();
-$username->setUserName('Yogesh');
 
-var_dump($username->getUserName());
+$user = new User();
+$user->setUserName('Yogesh');
+
+var_dump($user->getUserName());

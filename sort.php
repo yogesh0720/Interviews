@@ -2,37 +2,40 @@
 //bubble sort
 $array = [3, 6, 6, 6, 1, 9, 2];
 
-function sortArr($array, $order)
+function bubbleSort(array $array, int $order = 1): array
 {
-    for ($i = 0; $i < count($array); $i++) {
-        for ($j = 0; $j < count($array) - 1; $j++) {
-            if ($order == 1 && $array[$j] > $array[$j + 1]) {
-                $temp = $array[$j + 1];
-                $array[$j + 1] = $array[$j];
-                $array[$j] = $temp;
-            } elseif ($order == 2 && $array[$j] < $array[$j + 1]) {
-                $temp = $array[$j + 1];
-                $array[$j + 1] = $array[$j];
-                $array[$j] = $temp;
+    $n = count($array);
+
+    for ($i = 0; $i < $n; $i++) {
+        for ($j = 0; $j < $n - 1; $j++) {
+            if ($order === 1 && $array[$j] > $array[$j + 1]) {
+                [$array[$j], $array[$j + 1]] = [$array[$j + 1], $array[$j]];
+            } elseif ($order === 2 && $array[$j] < $array[$j + 1]) {
+                [$array[$j], $array[$j + 1]] = [$array[$j + 1], $array[$j]];
             }
         }
     }
     return $array;
 }
 
-//var_dump(sortArr($array, 1));
+print_r(bubbleSort($array, 1)); // Ascending: [1, 2, 3, 6, 6, 6, 9]
+print_r(bubbleSort($array, 2)); // Descending: [9, 6, 6, 6, 3, 2, 1]
 
 //selection sort
-function sortArr1($array, $order)
+function selectionSort(array $array, int $order = 1): array
 {
-    for ($i = 0; $i < count($array); $i++) {
-        for ($j = $i + 1; $j < count($array); $j++) {
-            if ($array[$i] > $array[$j]) {
-                $temp = $array[$i];
-                $array[$i] = $array[$j];
-                $array[$j] = $temp;
+    $n = count($array);
+
+    for ($i = 0; $i < $n; $i++) {
+        for ($j = $i + 1; $j < $n; $j++) {
+            if ($order === 1 && $array[$i] > $array[$j]) { // Ascending
+                [$array[$i], $array[$j]] = [$array[$j], $array[$i]];
+            } elseif ($order === 2 && $array[$i] < $array[$j]) { // Descending
+                [$array[$i], $array[$j]] = [$array[$j], $array[$i]];
             }
         }
     }
+    return $array;
 }
-var_dump(sortArr1($array, 1));
+print_r(selectionSort($array, 1)); // Ascending: [1, 2, 3, 6, 6, 9]
+print_r(selectionSort($array, 2)); // Descending: [9, 6, 6, 3, 2, 1]

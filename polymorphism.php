@@ -3,7 +3,7 @@ class Polymorphism
 {
     function operation($x, $y)
     {
-        //subtract
+        //addition
         return ($x + $y);
     }
 }
