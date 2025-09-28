@@ -1,4 +1,5 @@
 <?php
+
 $str = '12345';
 //echo strrev($str);
 //print_r($strArray);
@@ -16,3 +17,30 @@ for ($i = count($srtA) - 1; $i >= 0; $i--) {
     $result[] = $srtA[$i];
 }
 print_r($result);
+
+
+// $new = [];
+// for ($i = $count - $i; $i >= 0; $i--) {
+//     var_dump($array[$i]);
+//     $new[] = $i;
+// }
+// print_r($new);
+
+
+## Reverse associative array
+$array = [
+    "a" => 1,
+    "b" => 2,
+    "c" => 3,
+    "d" => 4
+];
+$count = count($array);
+$reversed = [];
+$keys = array_keys($array);
+$values = array_values($array);
+for ($i = $count - $i; $i >= 0; $i--) {
+    $key = $keys[$i];
+    $value = $values[$i];
+    $reversed[$key] = $value;
+}
+print_r($reversed);

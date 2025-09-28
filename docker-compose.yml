@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:latest
+    container_name: interview-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: interview@pass123
+      MYSQL_DATABASE: interview
+      # Removed MYSQL_USER and MYSQL_PASSWORD — since we’re just using root
+    ports:
+      - "4406:3306"  # Assuming you want to connect to MySQL via 4406 on host
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql-config:/etc/mysql/conf.d
+volumes:
+  db_data:

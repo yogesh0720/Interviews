@@ -23,6 +23,6 @@ function testFibonacci($numbers)
         return (testFibonacci($numbers - 1) + testFibonacci($numbers - 2));
     }
 }
-for ($i = 0; $i < 10; $i++) {
-    testFibonacci($i);
+for ($i = 1; $i < 10; $i++) {
+    echo testFibonacci($i) . "\n";
 }
