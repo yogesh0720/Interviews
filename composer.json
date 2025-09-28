@@ -1,0 +1,15 @@
+{
+  "name": "v-nshantibhai/interviews",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "v-nshantibhai",
+      "email": "v-nshantibhai@shutterfly.com"
+    }
+  ],
+  "require": {}
+}
