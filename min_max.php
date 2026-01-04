@@ -1,4 +1,5 @@
 <?php
+
 $array = [3, 6, 6, 9, 1, 9, 2, 1, 1, 1];
 $count = count($array);
 
@@ -21,7 +22,7 @@ for ($i = 0; $i < $count; $i++) {
     if ($array[$i] > $max) {
         $max = $array[$i];
         $maxCount = 1;
-    } else if ($array[$i] === $max) {
+    } elseif ($array[$i] === $max) {
         $maxCount++;
     }
 }

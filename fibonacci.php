@@ -1,4 +1,5 @@
 <?php
+
 // function testFibonacci($numbers)
 // {
 //     $f1 = 0;
@@ -17,7 +18,7 @@ function testFibonacci($numbers)
 {
     if ($numbers == 0) {
         return 0;
-    } else if ($numbers == 1) {
+    } elseif ($numbers == 1) {
         return 1;
     } else {
         return (testFibonacci($numbers - 1) + testFibonacci($numbers - 2));

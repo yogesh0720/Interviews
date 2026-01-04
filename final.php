@@ -1,4 +1,5 @@
 <?php
+
 class Base
 {
     final function operation($x, $y)

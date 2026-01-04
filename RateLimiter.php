@@ -1,4 +1,5 @@
 <?php
+
 class RateLimiter
 {
     private $storage = []; // In real-world, use Redis or Memcached

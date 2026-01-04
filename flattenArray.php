@@ -1,4 +1,5 @@
 <?php
+
 /*function flattenArray(array $input): array
 {
     $result = [];

@@ -1,4 +1,5 @@
 <?php
+
 abstract class Factory
 {
     abstract public static function create();

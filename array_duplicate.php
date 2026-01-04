@@ -1,4 +1,5 @@
 <?php
+
 //find the array have duplicates or not
 $array = [1, 2, 2, 3, 3, 4, 5, 5]; // 2,3,5
 // $d = array_diff_assoc($array, array_unique($array));

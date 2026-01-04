@@ -1,4 +1,5 @@
 <?php
+
 /*
     Static Factory Method → A static method (create()) that returns an object, often with a private constructor.
 */
@@ -8,7 +9,9 @@ class DBConnection
     private static ?\PDO $connection = null;
 
     // private constructor - prevent direct creation
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 
     // static factory method
     public static function create(string $dsn, string $user, string $password): \PDO

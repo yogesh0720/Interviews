@@ -1,4 +1,5 @@
 <?php
+
 class Polymorphism
 {
     function operation($x, $y)

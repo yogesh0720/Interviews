@@ -1,4 +1,5 @@
 <?php
+
 function getDirectorySize(string $path): int
 {
     $size = 0;

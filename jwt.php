@@ -1,4 +1,5 @@
 <?php
+
 // 1. Function to encode (create) JWT
 function create_jwt(array $payload, string $secret, string $algo = 'HS256'): string
 {

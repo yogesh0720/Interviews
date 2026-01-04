@@ -11,5 +11,20 @@
       "email": "v-nshantibhai@shutterfly.com"
     }
   ],
-  "require": {}
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "squizlabs/php_codesniffer": "^4.0"
+  },
+  "scripts": {
+    "phpcs": "./vendor/bin/phpcs --standard=PSR4 src/",
+    "phpcbf": "./vendor/bin/phpcbf --standard=PSR4 src/",
+    "phpstan": "./vendor/bin/phpstan analyse --level 5 src/",
+    "lint-fix": [
+      "@phpcbf"
+    ],
+    "test:quality": [
+      "@phpcs",
+      "@phpstan"
+    ]
+  }
 }

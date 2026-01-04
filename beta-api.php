@@ -1,4 +1,5 @@
 <?php
+
 //$url = "https://cmd.dev.thislife.com/json?method=album.saveAlbum"; // Replace with your actual API endpoint
 $url = "https://cmd.beta.thislife.com/json?method=album.saveAlbum"; // Replace with your actual API endpoint
 //$url = "https://cmd.thislife.com/json?method=album.saveAlbum"; // Replace with your actual API endpoint
@@ -16,18 +17,18 @@ try {
             [
                 "name" => "mynewal_" . $new_id,
                 //"life_uid" => "026096698502", //local
-                //"life_uid" => "000082842848", //dev                
+                //"life_uid" => "000082842848", //dev
                 "life_uid" => "001071777465" // "001050507631", //beta
-                
+
             ]
         ];
-    
+
         $postData = [
             "method" => "album.saveAlbum",
             "id" => null,
             "params" => $params
         ];
-    
+
 
         // Encode the full body to JSON
         $jsonData = json_encode($postData);
@@ -47,11 +48,11 @@ try {
               'sec-ch-ua-mobile: ?0',
               'sec-ch-ua-platform: "macOS"'
         ];
-    
-    
+
+
         // Initialize cURL
         $ch = curl_init($url);
-    
+
         curl_setopt_array(
             $ch,
             array(
@@ -69,22 +70,20 @@ try {
                 CURLOPT_HTTPHEADER => $headers
             )
         );
-    
-    
+
+
         // Execute and get response
         $response = curl_exec($ch);
-    
+
         // Error handling
         if (curl_errno($ch)) {
             echo 'Curl error: ' . curl_error($ch);
         } else {
             echo "Response for album $i: $response\n";
         }
-    
+
         curl_close($ch);
     }
 } catch (Exception $e) {
-    throw new Exception('Save album insert failed.. Error-'.print_r($e,true) );
+    throw new Exception('Save album insert failed.. Error-' . print_r($e, true));
 }
-
-

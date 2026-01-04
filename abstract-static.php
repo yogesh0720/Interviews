@@ -1,4 +1,5 @@
 <?php
+
 /*
     Static Abstract Method → Defined in interface/abstract class, forces implementing class to provide a static method.
 */

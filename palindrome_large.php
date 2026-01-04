@@ -1,4 +1,5 @@
 <?php
+
 function largestPalindrome($start, $end)
 {
     $palindrome = 0;

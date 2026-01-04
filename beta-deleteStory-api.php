@@ -1,4 +1,5 @@
 <?php
+
 //$url = "https://cmd.dev.thislife.com/json?method=album.saveAlbum"; // Replace with your actual API endpoint
 $url = "https://cmd.beta.thislife.com/json?method=deleteStory"; // Replace with your actual API endpoint
 //$url = "https://cmd.thislife.com/json?method=album.saveAlbum"; // Replace with your actual API endpoint
@@ -11,18 +12,18 @@ try {
     for ($i = 0; $i < $count; $i++) {
         $new_id = $start_id + $i;
         // Customize the album name in each request
-        echo "id:".$new_id."\n";
+        echo "id:" . $new_id . "\n";
         $params = [
             $token,
             $new_id
         ];
-    
+
         $postData = [
             "method" => "deleteStory",
             "id" => null,
             "params" => $params
         ];
-    
+
 
         // Encode the full body to JSON
         $jsonData = json_encode($postData);
@@ -42,11 +43,11 @@ try {
               'sec-ch-ua-mobile: ?0',
               'sec-ch-ua-platform: "macOS"'
         ];
-    
-    
+
+
         // Initialize cURL
         $ch = curl_init($url);
-    
+
         curl_setopt_array(
             $ch,
             array(
@@ -64,22 +65,20 @@ try {
                 CURLOPT_HTTPHEADER => $headers
             )
         );
-    
-    
+
+
         // Execute and get response
         $response = curl_exec($ch);
-    
+
         // Error handling
         if (curl_errno($ch)) {
             echo 'Curl error: ' . curl_error($ch);
         } else {
             echo "Response for album $i: $response\n";
         }
-    
+
         curl_close($ch);
     }
 } catch (Exception $e) {
-    throw new Exception('Delete album failed.. Error-'.print_r($e,true) );
+    throw new Exception('Delete album failed.. Error-' . print_r($e, true));
 }
-
-

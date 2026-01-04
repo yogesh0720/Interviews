@@ -1,7 +1,8 @@
 <?php
+
 $input = 'USA';
 $country = ['INDIA', 'USA', 'CANADA'];
-function isCountryExist($input,  $country)
+function isCountryExist($input, $country)
 {
     //return  in_array($input, $country) ? 'true' : 'false';
     foreach ($country as $c) {
@@ -11,5 +12,5 @@ function isCountryExist($input,  $country)
     }
     return false;
 }
-$output = isCountryExist($input,  $country);
+$output = isCountryExist($input, $country);
 var_dump($output);

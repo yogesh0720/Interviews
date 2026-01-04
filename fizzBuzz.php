@@ -1,8 +1,9 @@
 <?php
-/* 
-    Print number 1 to 50. 
-    If number is a multiplier of 3, print Fizz. 
-    If it's multiplier of 5, print Buzz. 
+
+/*
+    Print number 1 to 50.
+    If number is a multiplier of 3, print Fizz.
+    If it's multiplier of 5, print Buzz.
     If it's a multiplier of both print FizzBuzz.
 */
 $number = 50;
@@ -34,10 +35,10 @@ function printFizzBuzz($number)
 }
 
 
-/* 
-    Print number 1 to 50. 
-    If number is a divisible of 3, print Fizz. 
-    If it's divisible of 5, print Buzz. 
+/*
+    Print number 1 to 50.
+    If number is a divisible of 3, print Fizz.
+    If it's divisible of 5, print Buzz.
     If it's a divisible of both print FizzBuzz.
 */
 // function printFizzBuzz($number)

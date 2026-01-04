@@ -1,4 +1,5 @@
 <?php
+
 $array = [5, 7, 3, 9, 4, 6, 3, 8, 0, 2, 5];
 //$chunk = 3;
 print_r(array_chunk($array, $chunk));

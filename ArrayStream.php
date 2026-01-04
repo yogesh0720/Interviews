@@ -1,4 +1,5 @@
 <?php
+
 // File: ArrayStream.php
 
 class ArrayStream
