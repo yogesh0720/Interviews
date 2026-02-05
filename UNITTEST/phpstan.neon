@@ -1,0 +1,25 @@
+# phpstan.neon - PHPStan configuration file
+#
+# Configuration levels (0-9):
+# - Level 0: Basic checks
+# - Level 5: Reasonable for most projects
+# - Level 9: Strictest analysis
+
+parameters:
+    level: 5
+    paths:
+        - src
+        - tests
+    
+    # Ignore specific errors if needed
+    ignoreErrors:
+        - '#Call to an undefined method#'
+    
+    # Check for dead code
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    
+    # Additional rules
+    checkAlwaysTrueCheckTypeFunctionCall: true
+    checkAlwaysTrueInstanceof: true
+    checkAlwaysTrueStrictComparison: true

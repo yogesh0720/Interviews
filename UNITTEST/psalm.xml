@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- psalm.xml - Psalm configuration file -->
+<psalm
+    errorLevel="3"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <directory name="vendor" />
+            <directory name="build" />
+        </ignoreFiles>
+    </projectFiles>
+
+    <!-- Error levels: 1 (strictest) to 8 (most permissive) -->
+    <!-- Level 3 is good for most projects -->
+    
+    <!-- Enable taint analysis for security -->
+    <plugins>
+        <pluginClass class="Psalm\Plugin\Shepherd" />
+    </plugins>
+
+    <!-- Issue handlers -->
+    <issueHandlers>
+        <!-- Suppress specific issues if needed -->
+        <LessSpecificReturnType errorLevel="info" />
+        <MoreSpecificReturnType errorLevel="info" />
+        
+        <!-- Enable taint analysis -->
+        <TaintedInput>
+            <errorLevel type="error" />
+        </TaintedInput>
+    </issueHandlers>
+</psalm>
